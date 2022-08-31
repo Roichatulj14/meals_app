@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, dynamic> _filters = {
+  Map<String, bool> _filters = {
     'gluten': false,
     'lactose': false,
     'vegan': false,
@@ -101,7 +101,7 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routeName: (ctx) =>
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreeen.routeName: (ctx) =>
-            FiltersScreeen(_filters as Map<String, bool>, _setFilters),
+            FiltersScreeen(_filters, _setFilters),
       },
       onGenerateRoute: (settings) {
         print(settings.arguments);
